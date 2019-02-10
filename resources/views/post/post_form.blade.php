@@ -1,3 +1,12 @@
+<?php
+
+/**
+ * Created by PhpStorm.
+ * User: chinm
+ * Date: 10-02-2019
+ * Time: 15:48
+ */
+
 @extends('layouts.master')
 
 @section('content')
@@ -19,7 +28,7 @@
             <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
                 <h1>Create Post</h1>
                 <div class="col-md-4">
-                    <form method="post" action="">
+                    <form method="post" action="{{ route('post.form') }}">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="name">Title</label>

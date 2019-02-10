@@ -22,7 +22,15 @@
                         <button type="button" class="btn btn-primary btn-sm">Create Post</button>
                     </a>
                 </h1>
-
+                @if(Session::has('success'))
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+                            <div id="message" class="alert alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        </div>
+                    </div>
+                @endif
             </main>
         </div>
     </div>

@@ -32,4 +32,13 @@ class HomeController extends Controller
     public function getPostForm()   {
         return view('post.post_form');
     }
+
+    public function createPost(Request $request) {
+        $newPost = Post::create(array(
+            'title' => Input::get('title'),
+            'description' => Input::get('description'),
+            'author' => Auth::user()->id
+        ));
+        return redirect()->route('home')->with('success', 'Your post\'s added ! ');
+    }
 }
