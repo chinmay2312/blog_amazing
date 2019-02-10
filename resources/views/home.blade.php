@@ -17,7 +17,11 @@
             </nav>
 
             <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-                <h1> Welcome {{ Auth::user()->name }} </h1>
+                <h1>Posts
+                    <a href="{{ route('post.form') }}">
+                        <button type="button" class="btn btn-primary btn-sm">Create Post</button>
+                    </a>
+                </h1>
 
             </main>
         </div>

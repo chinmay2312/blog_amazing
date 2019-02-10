@@ -28,4 +28,8 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function getPostForm()   {
+        return view('post.post_form');
+    }
 }
