@@ -31,6 +31,33 @@
                         </div>
                     </div>
                 @endif
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Learn more</th>
+                        <th>Created on</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @if($posts)
+                        @foreach($posts as $post)
+                            <tr>
+                                <th>{{ $loop->iteration }}</th>
+                                <td>{{ $post->title }}</td>
+                                <td>{{ $post->name }}</td>
+                                <td>
+                                    <a href="{{ route('post.detail', ['id' => $post->id]) }}">View full post</a>
+                                </td>
+                                <td>{{ Carbon\Carbon::parse($post->created_at)->format('m-d-Y')  }}</td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <p class="text-center text-primary">You have noot created any post yet !</p>
+                    @endif
+                </table><Br>
             </main>
         </div>
     </div>
