@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Welcome Laravel Blog Tutorial
+    Amazing blog
 @endsection
 
 @section('content')

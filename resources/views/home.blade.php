@@ -55,7 +55,7 @@
                             </tr>
                         @endforeach
                     @else
-                        <p class="text-center text-primary">You have noot created any post yet !</p>
+                        <p class="text-center text-primary">You have not created any post yet !</p>
                     @endif
                 </table><Br>
             </main>
