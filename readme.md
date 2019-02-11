@@ -16,6 +16,12 @@ Features:
 - MySQL (Please modify .env file for customized configuration of database)
 - web server    (This project was developed using local server WAMP)
 
+After setting up database, wth correct credentials in .env file (which is at the topmost level), execute the following code in command line:
+
+`php artisan migrate`
+
+This command will setup the tables in your database
+
 ##Routes
 
 - /home     : Homepage with index table of all posts with title, author-name, creation-date
