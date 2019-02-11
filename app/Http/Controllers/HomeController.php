@@ -46,7 +46,7 @@ class HomeController extends Controller
 
     public function getPost($id) {
         $post = Post::find($id);
-        $comments = DB::table('comments')->paginate(10);
+        $comments = DB::table('comments')->where('post','=',$id)->paginate(10);
         return view('post.post_detail', ['post' => $post])->with('comments',$comments);
     }
 }

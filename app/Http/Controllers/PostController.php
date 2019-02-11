@@ -38,7 +38,7 @@ class PostController extends Controller
             'author' => Auth::user()->id,
             'likes' => 0
         ));
-        $comments = DB::table('comments')->paginate(10);
+        $comments = DB::table('comments')->where('post','=',$post_id)->paginate(10);
         //return view('post.post_detail', ['post' => $post]);
         return redirect()->route('post.detail', ['id'=>$post_id])->with('comments',$comments)->with('success','Comment added!');
     }

@@ -29,7 +29,6 @@
                     <p>{{ $post->description }}</p>
                 </div>
                 @if(Session::has('comments'))
-                    echo "chiniman"
                     {{ $comments = Session::get('comments') }}
                     @foreach($comments as $comment)
                         <div class="row">
@@ -41,7 +40,7 @@
                 @guest
                     <div>Sign in to comment</div>
                 @else
-                    <form method="post" action="{{ route('comment', ['id' => 1]) }}">
+                    <form method="post" action="{{ route('comment', ['id' => $post->id]) }}">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="desc_comment">Comment for above post</label>
