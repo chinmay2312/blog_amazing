@@ -28,9 +28,11 @@
                 <div class="col-sm-8 blog-main">
                     <p>{{ $post->description }}</p>
                 </div>
-                @if($comments)
+                @if(Session::has('comments'))
+                    echo "chiniman"
+                    {{ $comments = Session::get('comments') }}
                     @foreach($comments as $comment)
-                        <div>
+                        <div class="row">
                             {{ $comment->description }}
                         </div>
                     @endforeach

@@ -32,14 +32,14 @@ class PostController extends Controller
     public function addComment($post_id) {
         //$post = Post::find($post_id)->first();
         //$author = $post->get('author');
-        Comment::create(array(
+        $newComment = Comment::create(array(
             'post' => $post_id,
             'description' => Input::get('desc_comment'),
             'author' => Auth::user()->id,
             'likes' => 0
         ));
-        $comments = DB::table('comments')->get();
+        $comments = DB::table('comments')->paginate(10);
         //return view('post.post_detail', ['post' => $post]);
-        return redirect()->route('post.detail', ['id'=>$post_id])->with(array('comments'=>$comments))->with('success','Comment added!');
+        return redirect()->route('post.detail', ['id'=>$post_id])->with('comments',$comments)->with('success','Comment added!');
     }
 }
