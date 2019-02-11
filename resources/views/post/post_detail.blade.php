@@ -31,8 +31,13 @@
                 @if(Session::has('comments'))
                     {{ $comments = Session::get('comments') }}
                     @foreach($comments as $comment)
-                        <div class="row">
-                            {{ $comment->description }}
+                        <div class="row" style="border:1px solid; margin-left: auto; padding-left: 20px">
+                            <div class="col-8">
+                                {{ $comment->description }}
+                            </div>
+                            <div class="col-4" style="justify-content: right;">
+                                -- Anonymous{{--{{ $comment->author }}--}}
+                            </div>
                         </div>
                     @endforeach
                 @endif
