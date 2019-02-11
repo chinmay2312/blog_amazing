@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
@@ -28,12 +30,13 @@ class PostController extends Controller
     }
 
     public function addComment($post_id) {
-        $post = Post::find($post_id);
-        $author = $post->get('author');
-        Post::create(array(
+        //$post = Post::find($post_id)->first();
+        //$author = $post->get('author');
+        Comment::create(array(
             'post' => $post_id,
             'description' => Input::get('desc_comment'),
-            'author' => $author
+            'author' => Auth::user()->id,
+            'likes' => 0
         ));
         //return view('post.post_detail', ['post' => $post]);
         return redirect()->route('post.detail', ['id'=>$post_id])->with('success','Comment added!');
