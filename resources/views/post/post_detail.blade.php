@@ -1,9 +1,9 @@
-/**
+{{--/**
  * Created by PhpStorm.
  * User: chinm
  * Date: 10-02-2019
  * Time: 17:36
- */
+ */--}}
 
 @extends('layouts.master')
 

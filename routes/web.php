@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('post.index');
-});
+Route::get('/', 'PostController@getIndex')->name('index');
 
 Auth::routes();
 
@@ -21,3 +19,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/author/post', 'HomeController@getPostForm')->name('post.form');
 Route::post('/author/post', 'HomeController@createPost')->name('post.form');
 Route::get('/author/post/detail/{id}', 'HomeController@getPost')->name('post.detail');
+Route::get('/post/read/{post_id}', 'PostController@getFullPost')->name('post.read');
