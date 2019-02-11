@@ -18,7 +18,7 @@
                 </ul>
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nav item again</a>
+                        <a class="nav-link" href="/home">Home</a>
                     </li>
                 </ul>
             </nav>

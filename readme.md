@@ -19,7 +19,7 @@ Features:
 ##Routes
 
 - /home     : Homepage with index table of all posts with title, author-name, creation-date
-
+- /author/post/detail/<enter post-id-here> View full post
 
 ##Author
 - Chinmay Gangal
