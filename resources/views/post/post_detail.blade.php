@@ -28,6 +28,13 @@
                 <div class="col-sm-8 blog-main">
                     <p>{{ $post->description }}</p>
                 </div>
+                @if($comments)
+                    @foreach($comments as $comment)
+                        <div>
+                            {{ $comment->description }}
+                        </div>
+                    @endforeach
+                @endif
                 {{--code for comments section under post--}}
                 @guest
                     <div>Sign in to comment</div>
